@@ -29,7 +29,7 @@ public class PlayerShooting : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
+        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets && transform.parent.transform.GetComponent<PlayerHealth>().currentHealth>0)
         {
             Shoot();
         }

@@ -26,9 +26,11 @@ public class PlayerMovement : MonoBehaviour {
         //Mendapatkan nilai input vertical (-1,0,1)
         float v = Input.GetAxisRaw("Vertical");
 
-        Move(h, v);
-        Turning();
-        Animating(h, v);
+        if (transform.GetComponent<PlayerHealth>().currentHealth > 0) {
+            Move(h, v);
+            Turning();
+            Animating(h, v);
+        }
     }
 
     //Method player dapat berjalan
